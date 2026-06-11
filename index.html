@@ -1,0 +1,379 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Booking Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+    <h2>✈ TravelPro</h2>
+
+    <ul>
+        <li><a href="#">🏠 Dashboard</a></li>
+        <li><a href="#">🌍 Packages</a></li>
+        <li><a href="#">📖 Bookings</a></li>
+        <li><a href="#">📅 Calendar</a></li>
+        <li><a href="#">🧑‍💼 Guides</a></li>
+        <li><a href="#">🖼 Gallery</a></li>
+        <li><a href="#">💬 Messages</a></li>
+        <li><a href="#">⭐ Feedback</a></li>
+        <li><a href="#">⚙ Settings</a></li>
+    </ul>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Travel Booking Dashboard</h1>
+        <div id="clock"></div>
+    </div>
+
+    <!-- DASHBOARD CARDS -->
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Bookings</h3>
+            <div class="counter" data-target="1245">0</div>
+        </div>
+
+        <div class="card">
+            <h3>New Customers</h3>
+            <div class="counter" data-target="326">0</div>
+        </div>
+
+        <div class="card">
+            <h3>Total Earnings</h3>
+            <div class="counter" data-target="56820">0</div>
+        </div>
+
+        <div class="card">
+            <h3>Upcoming Trips</h3>
+            <div class="counter" data-target="48">0</div>
+        </div>
+
+    </div>
+
+    <!-- PROFILE -->
+    <div class="profile">
+        <img src="rohan.jpg.jpeg" alt="Rohan choudhary">
+        <h3>Rohan Choudhary</h3>
+        <p>Premium Traveler</p>
+    </div>
+
+    <br>
+
+    <!-- CHART -->
+    <div class="chart-container">
+        <h2>Booking Analytics</h2>
+        <canvas id="bookingChart"></canvas>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input
+        type="text"
+        id="searchBooking"
+        placeholder="Search Booking...">
+    </div>
+
+    <!-- BOOKING TABLE -->
+    <div class="table-container">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Destination</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr class="booking-row">
+                    <td>101</td>
+                    <td>Rohan</td>
+                    <td>Bali</td>
+                    <td>Confirmed</td>
+                </tr>
+
+                <tr class="booking-row">
+                    <td>102</td>
+                    <td>Priya</td>
+                    <td>Dubai</td>
+                    <td>Pending</td>
+                </tr>
+
+                <tr class="booking-row">
+                    <td>103</td>
+                    <td>Ankit</td>
+                    <td>Maldives</td>
+                    <td>Confirmed</td>
+                </tr>
+
+                <tr class="booking-row">
+                    <td>104</td>
+                    <td>Sneha</td>
+                    <td>Thailand</td>
+                    <td>Confirmed</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <br>
+
+    <!-- TRAVEL PACKAGES -->
+
+    <h2>Popular Packages</h2>
+
+    <div class="packages">
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1000">
+            <div class="package-content">
+                <h3>Bali Adventure</h3>
+                <p>7 Days / 6 Nights</p>
+                <button
+                class="book-btn"
+                data-package="Bali Adventure">
+                Book Now
+                </button>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1000">
+            <div class="package-content">
+                <h3>Dubai Luxury</h3>
+                <p>5 Days / 4 Nights</p>
+                <button
+                class="book-btn"
+                data-package="Dubai Luxury">
+                Book Now
+                </button>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=1000">
+            <div class="package-content">
+                <h3>Maldives Escape</h3>
+                <p>6 Days / 5 Nights</p>
+                <button
+                class="book-btn"
+                data-package="Maldives Escape">
+                Book Now
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+
+    <!-- GUIDES -->
+
+    <h2>Travel Guides</h2>
+
+    <div class="guides">
+
+        <div class="guide-card">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg">
+            <h3>John Smith</h3>
+            <p>Bali Specialist</p>
+            <button
+            class="guide-contact"
+            data-guide="John Smith">
+            Contact
+            </button>
+        </div>
+
+        <div class="guide-card">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg">
+            <h3>Sarah Wilson</h3>
+            <p>Dubai Expert</p>
+            <button
+            class="guide-contact"
+            data-guide="Sarah Wilson">
+            Contact
+            </button>
+        </div>
+
+        <div class="guide-card">
+            <img src="https://randomuser.me/api/portraits/men/55.jpg">
+            <h3>Michael Brown</h3>
+            <p>Maldives Guide</p>
+            <button
+            class="guide-contact"
+            data-guide="Michael Brown">
+            Contact
+            </button>
+        </div>
+
+    </div>
+
+    <br>
+
+    <!-- GALLERY -->
+
+    <h2>Travel Gallery</h2>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3?w=1000">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1000">
+        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1000">
+        <img src="https://images.unsplash.com/photo-1468413253725-0d5181091126?w=1000">
+
+    </div>
+
+    <div class="preview-box">
+        <img
+        id="preview"
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3?w=1000">
+    </div>
+
+    <br>
+
+    <!-- CALENDAR -->
+
+    <div class="calendar">
+        <h2>Upcoming Tours</h2>
+
+        <p>12 June - Bali Tour</p>
+        <p>15 June - Dubai Tour</p>
+        <p>20 June - Maldives Tour</p>
+
+        <br>
+
+        <button id="tripAlert" class="book-btn">
+            View Trips
+        </button>
+    </div>
+
+    <br>
+
+    <!-- MESSAGES -->
+
+    <div class="message-box">
+
+        <h2>
+            Messages
+            <span
+            id="notification-count"
+            class="notification">
+            3
+            </span>
+        </h2>
+
+        <br>
+
+        <div class="message">
+            John: Can I change my booking date?
+        </div>
+
+        <div class="message">
+            Priya: Is breakfast included?
+        </div>
+
+        <div class="message">
+            Ankit: Need airport pickup.
+        </div>
+
+    </div>
+
+    <br>
+
+    <!-- FEEDBACK -->
+
+    <div class="feedback">
+
+        <h2>Customer Feedback</h2>
+
+        <br>
+
+        <form id="feedbackForm">
+
+            <input
+            type="text"
+            id="userName"
+            placeholder="Your Name"
+            required>
+
+            <textarea
+            rows="5"
+            placeholder="Write Feedback"
+            required></textarea>
+
+            <button type="submit">
+                Submit Feedback
+            </button>
+
+        </form>
+
+    </div>
+
+    <br>
+
+    <!-- DARK MODE -->
+
+    <button
+    id="darkMode"
+    class="book-btn">
+    Toggle Dark Mode
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+const ctx =
+document.getElementById("bookingChart");
+
+new Chart(ctx,{
+type:"line",
+data:{
+labels:[
+"Jan",
+"Feb",
+"Mar",
+"Apr",
+"May",
+"Jun"
+],
+datasets:[{
+label:"Bookings",
+data:[
+120,
+200,
+180,
+320,
+400,
+500
+],
+borderWidth:3,
+fill:false
+}]
+}
+});
+</script>
+
+</body>
+</html>
+```
